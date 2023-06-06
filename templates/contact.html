@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}contact{% endblock title %}
+
+{% block body %}
+
+
+{% if message %}
+<div class="alert alert-danger text-center" role="alert">
+  {{ message }}
+</div>
+{% endif %}
+
+<div class="container shadow shadow-intensity-xl my-5" style="background-color: #9F867C;
+border-radius: 10px; box-shadow: 0px 0px
+10px rgba(216, 91, 91, 0.2); padding: 5px;">
+    <!-- <header>
+        
+    </header> -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center mt-2 mb-3">Get in Touch</h2>
+                <p>We are here to help you 24/7 to resolve your issues and
+                    to answer your queries.</p>
+                <ul>
+                    <li><button class="mb-2"><a href="tel:+917602543237">Talk to us</a></button></li>
+                    <li><button class="mb-2"><a href="https://wa.me/7602543237">WhatsApp us</a></button></li>
+                    <li><button class="mb-2"><a href="mailto:sid.studentmedia@gmail.com">Email us</a></button></li>
+                    <li><button class="mb-2"><a href="#">Get a quotation</a></button></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-center mb-3 mt-2">Book an Appointment</h2>
+                <form method="POST" action={% url 'send_email' %}>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name"
+                            name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email"
+                            name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" class="form-control" id="phone"
+                            name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" id="date"
+                            name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time:</label>
+                        <input type="time" class="form-control" id="time"
+                            name="time" required>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Book
+                            Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

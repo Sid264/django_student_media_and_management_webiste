@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid shadow shadow-intensity-xl mt-0">
+
+    <div class="container">
+        <h1 style="border: 2px solid #800000; border-width: 4px; padding: 15px;"
+            class="col-md-12 text-center mt-3">Student Media and Management</h1>
+        <h6 class="text-center">Welcome User,
+            Have a Great Day</h6>
+        <div class="container mt-5">
+            <div class="text-center">
+                <h5 class="text-monospace">Here you'll find the latest
+                    updates of your seniors, juniors and mates too</h5>
+                
+                <h3>Its time to centralized our Community!</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="text-center mt-3">Our moto</h2>
+                    <ul class="list-unstyled">
+                        <li>
+                            {% comment %} <h3><a href="podcast-link.html"></a></h3>
+                            {% endcomment %}
+                            <p> Student media is based on ex and current student
+                                communication system
+                                where every students can be able to create their
+                                profile and add every kind of details regarding
+                                study, occupation and job related queries.
+                            </p>
+                        </li>
+                        <li>
+                            {% comment %} <h3><a href="podcast-link.html">Details</a></h3>
+                            {% endcomment %}
+                            <p>
+                                Whether you need to manage one institute or a
+                                hundred, Student media allows you to monitor &
+                                manage your institutes from a single dashboard
+                                with absolute ease.
+                                Set up granular controls and use extensive
+                                reporting features to get instant insights on
+                                performance.
+                                Student Media not only offers key user-roles –
+                                Administrator, Staff, Teachers, Parents &
+                                Students – but also allows you to further define
+                                data & service access for highly granular user
+                                access contorls that help you ensure higher
+                                accountability and restrict access to sensitive
+                                content.
+                                A rich and flexible toolset enables both
+                                teachers and administrative staff to manage even
+                                thousands of students in hundreds of batches,
+                                courses, classes across multiple institutes with
+                                absolute ease.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="mt-5">
+                        <img src="/static/pic.jpg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-3 mb-3" style="background-color:
+            #5E5A80;
+            border: none; box-shadow: 0px 0px
+            10px rgba(216, 91, 91, 0.2); padding: 60px;">
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h3>About Us</h3>
+                            <p>We are here to help you to clear any kind of
+                                doubts
+                                for
+                                current users
+                                and bring back the memories for ex students.</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Links</h3>
+                            <ul>
+                                <li><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h3>Follow Us</h3>
+                            <ul>
+                                <li><a href="https://www.facebook.com/profile.php?id=100092358561412"><i class="fab fa-facebook"></i>
+                                        Facebook</a></li>
+                                <li><a href="https://twitter.com/SudipPr78584631"><i class="fab fa-twitter"></i>
+                                        Twitter</a></li>
+                                <li><a href="https://www.instagram.com/chubby_cheek_sid/"><i class="fab fa-instagram"></i>
+                                        Instagram</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

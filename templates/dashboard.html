@@ -1,0 +1,45 @@
+{% extends 'base1.html' %}
+
+{% block title %}dashboard{% endblock title %}
+
+{% block body %}
+
+<div class="text-center my-2">
+    <h2 class="text-monospace" style="color:darkslategrey">Have a look over the
+        Community Profiles</h2>
+</div>
+
+<div class="container-fluid">
+    <div class="row my-2">
+        {% for profile in profiles %}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card mb-2 shadow">
+                    <div class="card-header" style="background-color: #94ddc4;
+                color: #9d2929;
+                padding: 10px;
+                font-size: 20px;">
+                        <h5 class="card-title">
+                            <a href="{% url 'profileDetails' profile.id %}">
+                                {{ profile.user.first_name }} {{ profile.user.last_name }}
+                            </a>
+                        </h5>
+                        <p class="card-text">Department : {{ profile.user.subject }}</p>
+                        <p class="card-text">Course : {{ profile.course }}</p>
+                        <p class="card-text">Gender : {{ profile.sex }}</p>
+                        <p class="card-text">Institute : {{ profile.institute }}</p>
+
+
+                        <!-- Add other profile fields as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:4 %}
+    </div><div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}register{% endblock title %}
+
+{% block body %}
+
+<div class="container px-5 shadow shadow-intensity-xl mt-5"
+    style="background-color: #01F9C6; border-radius: 10px; box-shadow: 0px 0px
+    10px rgba(216, 91, 91, 0.2); padding: 70px;">
+    <div class="alert alert-dark shadow-sm p-1 mb-5 col-md-12 bg-warning rounded"
+        role="alert">
+        <div class="text-center">
+            <p class="text-monospace font-weight-bold mt-3">New User? Register
+                Here!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div style="display: flex; justify-content: center;">
+            <div class="row flex-column flex-md-row justify-content-center">
+                <div class="col-md-12
+                    mb-3">
+                    <div class="card mb-3" style="background-color:#00FFFF ;
+                        width: auto;
+                        height: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold text-center">
+                                Student Registration</h5>
+                            <p class="card-text text-center">Click the Register button below &#8628</p>
+                            <a href="{% url 'form1_view' %}" class="btn
+                                btn-primary col-md-12">Register &#8626</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}

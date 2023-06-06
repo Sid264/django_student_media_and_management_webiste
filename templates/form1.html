@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+{% block title %}form{% endblock title %}
+
+{% block body %}
+
+{% if messages %}
+<div class="alert alert-danger text-center" role="alert">
+    {{ message }}
+</div>
+{% endif %}
+
+<form method="Post" action="{% url 'register' %}" ,
+    enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 class="text-center">Register here</h2>
+    <div class="container shadow shadow-intensity-xl my-2">
+
+        <div class="form-row justify-content-center">
+            <div class="form-group col-md-4 mt-1">
+                <label for="email">Email ID</label>
+                <input type="email" class="form-control" id="email"
+                    name="email" placeholder="Enter your Email_ID" required>
+            </div>
+            <div class="form-group col-md-4 mt-1">
+                <label for="password">Password</label>
+                <input type="password" class="form-control"
+                    id="password" name="password"
+                    placeholder="Enter a strong Password" required>
+            </div>
+            <div class="form-group col-md-4 mt-1">
+                <label for="password">Confirm Password</label>
+                <input type="password" class="form-control" id="password"
+                    name="cpassword"
+                    placeholder="Retype the password you entered" required>
+            </div>
+        </div>
+
+        <div class="form-row justify-content-center">
+            <div class="form-group col-md-4">
+                <label for="name">First Name</label>
+                <input type="name" class="form-control" id="name"
+                    placeholder="Enter First Name" name="firstName" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="name">Last Name</label>
+                <input type="name" class="form-control" id="name"
+                    placeholder="Enter Last Name" name="lastName" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="sex">Sex</label>
+                <select id="sex" class="form-control" name="sex" required>
+                    <option selected>Choose...</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row justify-content-center">
+            <div class="form-group col-md-4">
+                <label for="instituteName">Your Institute</label>
+                <select id="instituteName" class="form-control"
+                    name="institute" required>
+                    <option selected>Choose...</option>
+                    <option>Midnapore College (Autonomous)</option>
+                    <option>Vidyasagar University</option>
+                    <option>Raja Narendra Lal Khan Women's College</option>
+                    <option>Kaibalyadayini College of Commerce and General
+                        Studies</option>
+                    <option>Midnapore City College</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="courseName">Course</label>
+                <select id="courseName" class="form-control" name="course"
+                    required>
+                    <option selected>Choose...</option>
+                    <option>BA</option>
+                    <option>MA</option>
+                    <option>B.Sc</option>
+                    <option>M.Sc</option>
+                    <option>B.Tech</option>
+                    <option>M.Tech</option>
+                    <option>Diploma/Certificate Course</option>
+                    <option>Post Graduate Diploma</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="subjectName">Subject</label>
+                <select id="subjectName" class="form-control" name="subject"
+                    required>
+                    <option selected>Choose...</option>
+                    <option>Bengali</option>
+                    <option>English</option>
+                    <option>Mathematics</option>
+                    <option>Physics</option>
+                    <option>Chemistry</option>
+                    <option>Zoology</option>
+                    <option>Computer Science</option>
+                    <option>Physiology</option>
+                    <option>Botany</option>
+                    <option>Microbiology</option>
+                    <option>Nutrition</option>
+                    <option>Statistics</option>
+                    <option>Electronics</option>
+                    <option>Political Science</option>
+                    <option>History</option>
+                    <option>Sanskrit</option>
+                    <option>Philosophy</option>
+                    <option>Geography</option>
+                    <option>Sociology</option>
+                    <option>Education</option>
+                    <option>Physical Education</option>
+                    <option>Hindi</option>
+                    <option>Economics</option>
+                    <option>B.C.A</option>
+                    <option>Yoga</option>
+                    <option>Journalism & Mass Comunication</option>
+                    <option>Travel and Tourism Management</option>
+                    <option>Performing Arts & Visual Arts</option>
+                    <option>Yoga & Health Science</option>
+                    <option>Instrumentation & Data Analysis</option>
+                    <option>Film Study</option>
+                    <option>Communicative Englsh</option>
+                    <option>Management and Rural Developement with
+                        Panchayati
+                        Raj</option>
+                    <option>Travel & Tourism Management With Travel
+                        Photography</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="date">Course Starting Date</label>
+                <input type="date" class="form-control" id="date"
+                    name="startingDate" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="date">Course Completion Date</label>
+                <input type="date" class="form-control" id="date"
+                    name="endingDate" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="profile_photo">Profile Photo</label>
+                <input type="file" class="form-control-file" id="profile_photo"
+                    name="profile_photo" accept="image/*">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="inputAddress">Full Address</label>
+                <input type="text" class="form-control" id="inputAddress"
+                    placeholder="Enter your address in details" name="address1"
+                    required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity"
+                    name="city" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control" name="state"
+                    required>
+                    <option selected>Choose...</option>
+                    <option>West Bengal</option>
+                    <option>Bihar</option>
+                    <option>Uttar Pradesh</option>
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip"
+                    name="zip" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox"
+                    id="gridCheck" required>
+                <label class="form-check-label" for="gridCheck">
+                    Review the details you entered and then hit me if all are correct.
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn mb-3 col-md-12"
+            style="background-color: #36454F; color: white; box-shadow: 2px 2px
+            5px #888888;">Submit for SignUp &#8626</button>
+    </div>
+</form>
+
+{% endblock body %}

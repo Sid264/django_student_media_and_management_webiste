@@ -1,0 +1,35 @@
+{% extends 'base1.html' %}
+
+{% block title %}profileDetails{% endblock title %}
+
+{% block body %}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="my-2 text-center">Profile Details</h2>
+        </div>
+        <div class="card-body my-2">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4> {{ profile.user.first_name }} {{ profile.user.last_name }}</h4>
+                    <p>Gender: {{ profile.user.sex }}</p>
+                    <p>Studied in {{ profile.user.institute }}</p>
+                    <p>Department: {{ profile.user.course }}</p>
+                    
+                    
+                    <!-- Add other user details as needed -->
+                </div>
+                <div class="col-md-6">
+                    <!-- Display additional profile fields -->
+                    <p>Started at: {{ profile.user.startingDate }}</p>
+                    <p>Ending at: {{ profile.user.endingDate }}</p>
+                    <p>Address: {{ profile.user.address1 }} , {{ profile.user.city }} , {{ profile.user.state }} , {{ profile.user.zip }}</p>
+                    <!-- Add other profile fields as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
