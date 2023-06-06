@@ -137,7 +137,6 @@ class SendEmailView(View):
         return render(request, 'contact.html', {'message':"Appoitment requested successfully."})
     
 
-
 def logout(request):
     logout(request)
     return redirect('home')
