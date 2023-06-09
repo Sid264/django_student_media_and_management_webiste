@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=$#)_jnh_0n7vh01@l@)o1+ba6g-y-fnc5-346&!kq0@5t%5k0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -129,7 +129,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'sid.studentmedia@gmail.com'
 EMAIL_HOST_PASSWORD = 'teamsun01'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = 'sudippramanik34150@gmail.com'
 
 
 #Added Manually
