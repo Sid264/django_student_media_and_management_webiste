@@ -33,8 +33,7 @@ class Register(LoginRequiredMixin,View):
             city = request.POST.get("city")
             state = request.POST.get("state")
             zip = request.POST.get("zip")
-            # profilePhoto = request.FILES.get("profilePhoto")
-            
+                        
             
             if password1 != password2:
                 messages.error(request, "Passwords do not match.")
@@ -49,13 +48,7 @@ class Register(LoginRequiredMixin,View):
                 last_name=lastName
             )
             userOb.save()
-            
-            # if profilePhoto:
-            #     filename = default_storage.save(profilePhoto.name, profilePhoto)
-            #     profilePhotoPath = default_storage.url(filename)
-            # else:
-            #     profilePhotoPath = None
-                
+             
             
             if (userOb != None):
                 profileOb = UserProfile.objects.create(

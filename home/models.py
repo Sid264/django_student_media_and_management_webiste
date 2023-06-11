@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # profile_photo = models.ImageField(upload_to='profile_photos/', null=False, blank=False)
     institute = models.CharField(max_length=150, blank=False,null=False)
     course = models.CharField(max_length=150, blank=False,null=False)
     subject = models.CharField(max_length=150, blank=False,null=False)
