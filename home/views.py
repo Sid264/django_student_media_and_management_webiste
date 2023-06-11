@@ -4,17 +4,10 @@ from home.forms import form1
 from django.contrib.auth.models import User
 from .models import UserProfile
 from django.views import View
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.core.files.storage import default_storage
-import datetime
-
-# from django.template import RequestContext
-
-
-
 
 def index(request):
     return render(request, 'index.html')
@@ -138,5 +131,4 @@ class SendEmailView(View):
     
 
 def logout(request):
-    logout(request)
     return redirect('home')
