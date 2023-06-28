@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.core.mail import send_mail
+# from dal import autocomplete
 
 def index(request):
     return render(request, 'index.html')
@@ -124,4 +125,5 @@ class SendEmailView(View):
     
 
 def logout(request):
+    logout(request)
     return redirect('home')
